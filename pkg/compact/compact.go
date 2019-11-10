@@ -683,6 +683,7 @@ type RetryError struct {
 	err error
 }
 
+// Retry wraps the passed non HaltError as a RetryError
 func Retry(err error) error {
 	if IsHaltError(err) {
 		return err
